@@ -5,32 +5,7 @@ const menu_div = document.querySelectorAll('.menu a');
 const menu_btn = document.querySelector('.menu_btn');
 const bodyClass = document.querySelector('body');
 
-function myAnime(){
-	gsap.from('.jumbo .hello p',{
-		opacity: '0',
-		x: '100px',
-		stagger: '.05',
-		duration: '.5'
-	})
-	gsap.from('.jumbo .world p',{
-		opacity: '0',
-		x: '-100px',
-		stagger: {
-			each: '0.1',
-			from: 'end'
-		},
-		duration: '.5'
-	})
-	gsap.from('#job',{
-		opacity: '0',
-		duration: '2'
-	})
-	gsap.from('.jumbo .socmed',{
-		y: '100%',
-		duration: '.5',
-		opacity: '0'
-	})
-}
+
 
 function lMenuToggle(){
 	menu_btn.addEventListener('click',()=>{
@@ -75,6 +50,33 @@ if(window.innerWidth >768){
 	lMenuToggle()
 	lLoadedAnim()
 }else{
+
+	function myAnime(){
+	gsap.from('.jumbo .hello p',{
+		opacity: '0',
+		x: '100px',
+		stagger: '.05',
+		duration: '.5'
+	})
+	gsap.from('.jumbo .world p',{
+		opacity: '0',
+		x: '-100px',
+		stagger: {
+			each: '0.1',
+			from: 'end'
+		},
+		duration: '.5'
+	})
+	gsap.from('#job',{
+		opacity: '0',
+		duration: '2'
+	})
+	gsap.from('.jumbo .socmed',{
+		y: '100%',
+		duration: '.5',
+		opacity: '0'
+	})
+	}
 
 	const tl = gsap.timeline({paused: true})
 		tl.to('.jumbo .socmed',{
